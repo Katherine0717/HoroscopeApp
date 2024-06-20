@@ -6,6 +6,7 @@ body {
 }
 
 main {
+  background-color:beige;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,6 +14,10 @@ main {
   height: 100vh;
   padding: 1rem;
   text-align: center;
+}
+p {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
 }
 
 h1 {
@@ -48,7 +53,7 @@ button {
 }
 
 button:hover {
-  background-color: #005bb5;
+  background-color: #e9f9a9;
 }
 
 .modalOverlay {
@@ -64,11 +69,11 @@ button:hover {
 }
 
 .modal {
-  background: rgba(228, 236, 188, 0.755);
-  padding: 5rem;
+  background: rgb(222, 223, 218);
+  padding: 3rem;
   border-radius: 5px;
   position: relative;
-  width: 350px;
+  width: 450px;
   text-align: center;
 }
 
@@ -85,12 +90,12 @@ button:hover {
 .loading {
   margin-top: 1rem;
   font-size: 1.2rem;
-  color: #0070f3;
+  color: #010101;
 }
 
 .image {
   margin-top: 1rem;
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   border-radius: 5px;
 }

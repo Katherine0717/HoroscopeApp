@@ -13,7 +13,8 @@ const BirthdayForm = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
-
+    setIsWindowOpen(true);
+    
     // Generate chat
     const chatPrompt = `This is my birthday: ${birthday}. Provide me a short, concise joke of my horoscope in quotation marks.`;
 
@@ -42,7 +43,6 @@ const BirthdayForm = () => {
     setImageUrl(imageData.imageUrl);
 
     setLoading(false);
-    setIsWindowOpen(true);
   };
 
   const handleCloseModal = () => {
@@ -64,14 +64,13 @@ const BirthdayForm = () => {
         <button type="submit">Submit</button>
       </form>
 
-      {loading && <p className="loading">Loading...</p>}
-
       {isWindowOpen && (
         <div className="modalOverlay">
           <div className="modal">
             <button className="closeButton" onClick={handleCloseModal}>×</button>
-            <p>{response}</p>
-            {imageUrl && <img src={imageUrl} alt="Generated birthday celebration" className="image" />}
+            {loading && <p className="loading">Loading...</p>}
+            {!loading && <p>{response}</p>}
+            {!loading && imageUrl && <img src={imageUrl} alt="Generated birthday celebration" className="image" />}
           </div>
         </div>
       )}
